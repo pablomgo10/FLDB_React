@@ -1,0 +1,66 @@
+
+.general{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.home h1{
+    margin-left: 2rem;
+}
+
+.pelicula{
+    height: 400px;
+    width: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+.portada{
+    height: 320px;
+    width: 240px;
+    border-radius: 20px;
+}
+
+.titulo-pelicula{
+    font-size: 20px;
+}
+
+.botones-pelicula {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+}
+
+.atras-peliculas, .siguiente-peliculas{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); /* Comienza transparente */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.atras-peliculas:hover{
+    background-color: rgba(27, 27, 27, 0.5);
+    .flecha-izquierda{
+        height: 30px;
+    }
+}
+
+.siguiente-peliculas:hover{
+    background-color: rgba(27, 27, 27, 0.5);
+    .flecha-derecha{
+        height: 30px;
+    }
+}
+
+
+.flecha-derecha, .flecha-izquierda{
+    position: relative;
+    height: 20px;
+    transition: height 0.3s ease-in-out;
+}
