@@ -1,7 +1,7 @@
 
 import { Footer } from "./Footer";
 import { Listado } from "./Listado";
-//import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -17,6 +17,10 @@ export function Home() {
     if (nuevaPagina < 1) return;
     navigate (`?page=${nuevaPagina}`)
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Esta línea asegura que la página se desplace al principio
+  }, [paginaActual]);
 
   return (
     <div className="home">
