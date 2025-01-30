@@ -4,6 +4,8 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './componentes/Home.jsx';
+import { Pelicula } from './componentes/Pelicula.jsx';
+
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -34,6 +36,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/pelicula" element={<Pelicula />} />
       </Routes>
     </Router>
   )
