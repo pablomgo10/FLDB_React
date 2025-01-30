@@ -9,7 +9,7 @@ export function Pelicula(){
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMmMxM2QwYTA1ZDZlM2Q2ZDMxOWI4OWNmNTJiOGQ4NSIsIm5iZiI6MTY4OTI0MDYzNS4xODQsInN1YiI6IjY0YWZjNDNiOGEwZTliMDEzYWZmMTUwNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Pw3vzGWdw6rhx0yZZybjdcuWOGIp3c_HqfFw9ubPzQw'
+      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`
     }
   };
 
