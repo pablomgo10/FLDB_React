@@ -1,6 +1,7 @@
 
 import { Footer } from "./Footer";
 import { Listado } from "./Listado";
+import { Nav } from "./Nav";
 import { useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,11 +20,14 @@ export function Home() {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Esta línea asegura que la página se desplace al principio
+    setTimeout(()=>{
+      window.scrollTo(0, 0);
+    }, 300);
   }, [paginaActual]);
 
   return (
     <div className="home">
+      <Nav/>
       <h1>Películas populares:</h1>
       <Listado pagina={paginaActual}/>
       <div className="botones-pelicula">
@@ -38,4 +42,6 @@ export function Home() {
       <Footer/>
     </div>
   );
+
+  
 }

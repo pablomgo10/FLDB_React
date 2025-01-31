@@ -1,0 +1,39 @@
+.nav {
+    position: sticky;
+    background: rgba(61, 61, 61, 0.9);
+    font-size: medium;
+    padding-top: 1px;
+    top: 0%;
+    z-index: 10;
+    height: 60px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+
+}
+
+ul li {
+    list-style-type: none;
+    transition: all 300ms ease-in-out;
+
+}
+
+li:hover {
+
+    background-color: rgba(47, 47, 47,0.8);
+    padding: 5px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #646cff;
+    cursor:pointer;
+    transition: all 300ms ease-in-out;
+    
+}
+
+a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.87);
+}

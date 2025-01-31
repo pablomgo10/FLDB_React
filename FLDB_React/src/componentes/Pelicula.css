@@ -1,0 +1,48 @@
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pelicula-general{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    gap: 50px;
+}
+
+.portada-pelicula{
+    width: 400px;
+    height: 450px;
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
+
+.info-esencial{
+    grid-column: 2/4;
+    grid-row: 1/1;
+}
+
+.desc{
+    grid-column: 1/4;
+    grid-row: 2/2;
+}
+
+.aprobado{
+    font-weight: bold;
+    color: rgb(54, 198, 80);
+}
+
+.regular{
+    font-weight: bold;
+    color: rgb(249, 177, 43);
+}
+
+.suspenso{
+    font-weight: bold;
+    color: rgb(176, 36, 36);
+}
