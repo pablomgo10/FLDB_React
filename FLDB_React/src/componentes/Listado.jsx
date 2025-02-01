@@ -3,8 +3,8 @@ import { useFetch } from "../funciones/useFetch";
 import { useNavigate } from "react-router-dom";
 
 
-export function Listado({ pagina }) {
-  const url = `https://api.themoviedb.org/3/movie/popular?language=es-ES&page=${pagina}`;
+export function Listado({ url }) {
+  
   const options = {
     method: "GET",
     headers: {
@@ -21,7 +21,7 @@ export function Listado({ pagina }) {
     navigate(`/pelicula?id=${nuevaPelicula}`);
   };
   return (
-    <div className="general" key={pagina}>
+    <div className="general" key={url}>
       {data && data.results ? (
         data.results.map((movie) => (
           <div className="pelicula" key={movie.id}>

@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
 
-export function Nav(){
-    return(
+export function Nav() {
+    return (
         <div className="nav">
             <ul>
                 <li>
                     <Link to={'/'}>
-                    Populares
+                        Populares
                     </Link>
                 </li>
                 <li>
-                    En Cartelera
+                    <Link to={'/cartelera'}>
+                        En Cartelera
+                    </Link>
+
                 </li>
                 <li>
-                    Proximamente
+                    <Link to={'/proximamente'}>
+                        Proximamente
+                    </Link>
+
                 </li>
                 <li>
                     Mejores valoradas

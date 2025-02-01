@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './componentes/Home.jsx';
 import { Pelicula } from './componentes/Pelicula.jsx';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Cartelera } from './componentes/Cartelera.jsx';
+import { Proximamente } from './componentes/Proximamente.jsx';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pelicula" element={<Pelicula />} />
+            <Route path='/cartelera' element={<Cartelera/>}/>
+            <Route path='/proximamente' element={<Proximamente/>} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>

@@ -7,7 +7,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
-export function Home() {
+export function Cartelera() {
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -25,12 +25,12 @@ export function Home() {
     }, 300);
   }, [paginaActual]);
 
-  const url = `https://api.themoviedb.org/3/movie/popular?language=es-ES&page=${paginaActual}`;
-
+  //const url = `https://api.themoviedb.org/3/movie/upcoming?language=es-ES&page=${paginaActual}`;
+    const url=`https://api.themoviedb.org/3/movie/now_playing?language=es-ES&page=${paginaActual}`;
   return (
     <div className="home">
       <Nav/>
-      <h1>Películas populares:</h1>
+      <h1>Películas en cartelera:</h1>
       <Listado url={url}/>
       <div className="botones-pelicula">
       <button onClick={() => cambiarPagina(paginaActual - 1)} className="atras-peliculas">
