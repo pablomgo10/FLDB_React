@@ -1,17 +1,18 @@
 //import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { useFetch } from "../funciones/useFetch";
 import { useNavigate } from "react-router-dom";
 
 
 export function Listado({ url }) {
-  
-  const options = {
-    method: "GET",
+
+  const options = useMemo(() => ({
+    method: 'GET',
     headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-    },
-  };
+      accept: 'application/json',
+      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`
+    }
+  }), []);
 
   const { data } = useFetch(url, options);
 

@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './componentes/Home.jsx';
+import { Popular } from './componentes/Popular.jsx';
 import { Pelicula } from './componentes/Pelicula.jsx';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Cartelera } from './componentes/Cartelera.jsx';
@@ -17,7 +18,8 @@ function App() {
           key={window.location.pathname} // Usamos la ruta como clave para que se active la animación
         >
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path='/' element={<Home />} />
+            <Route path="/populares" element={<Popular />} />
             <Route path="/pelicula" element={<Pelicula />} />
             <Route path='/cartelera' element={<Cartelera/>}/>
             <Route path='/proximamente' element={<Proximamente/>} />

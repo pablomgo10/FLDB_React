@@ -1,0 +1,79 @@
+
+.general, .peliculas-listado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.populares h1{
+    margin-left: 2rem;
+}
+
+.pelicula{
+    height: 500px;
+    width: 300px;
+    text-align: center;
+    opacity: 0; 
+    animation: fadeIn 1s forwards;
+}
+
+.portada{
+    height: 320px;
+    width: 240px;
+    border-radius: 20px;
+    transition: transform .2s;
+}
+
+.portada:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+.titulo-pelicula{
+    font-size: 20px;
+    transition: all 300ms ease-in-out;
+}
+
+.titulo-pelicula:hover{
+    color: rgb(5, 202, 202);
+    transition: color 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.botones-pelicula {
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+}
+
+.atras-peliculas, .siguiente-peliculas{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); 
+    transition: background-color 0.2s ease-in-out;
+}
+
+.atras-peliculas:hover{
+    background-color: rgba(27, 27, 27, 0.5);
+    .flecha-izquierda{
+        height: 30px;
+    }
+}
+
+.siguiente-peliculas:hover{
+    background-color: rgba(27, 27, 27, 0.5);
+    .flecha-derecha{
+        height: 30px;
+    }
+}
+
+
+.flecha-derecha, .flecha-izquierda{
+    position: relative;
+    height: 20px;
+    transition: height 0.3s ease-in-out;
+}

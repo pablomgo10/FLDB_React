@@ -5,7 +5,7 @@ export function Nav() {
         <div className="nav">
             <ul>
                 <li>
-                    <Link to={'/'}>
+                    <Link to={'/populares'}>
                         Populares
                     </Link>
                 </li>

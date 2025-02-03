@@ -1,9 +1,11 @@
 @import './componentes/Home.css';
+@import './componentes/Popular.css';
 @import './componentes/Footer.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import './componentes/Listado.css';
 @import './componentes/Nav.css';
 @import './componentes/Pelicula.css';
+
 
 *{
   font-family: 'Roboto Mono';
