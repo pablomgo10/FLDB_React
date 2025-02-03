@@ -30,7 +30,7 @@ export function Popular() {
   return (
     <div className="populares">
       <Nav/>
-      <h1>Películas populares:</h1>
+      <h1 className="titulo">Películas populares:</h1>
       <Listado url={url}/>
       <div className="botones-pelicula">
       <button onClick={() => cambiarPagina(paginaActual - 1)} className="atras-peliculas">

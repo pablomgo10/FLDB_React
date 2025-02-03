@@ -10,8 +10,9 @@
 
 ul {
     display: flex;
-    justify-content: center;
-    gap: 5em;
+    justify-content: end;
+    margin-right: 10%;
+    gap: 3em;
 
 }
 

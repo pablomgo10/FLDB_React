@@ -4,6 +4,11 @@ export function Nav() {
     return (
         <div className="nav">
             <ul>
+            <li>
+                    <Link to={'/'}>
+                        Home
+                    </Link>
+                </li>
                 <li>
                     <Link to={'/populares'}>
                         Populares

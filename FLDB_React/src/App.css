@@ -5,10 +5,16 @@
 @import './componentes/Listado.css';
 @import './componentes/Nav.css';
 @import './componentes/Pelicula.css';
+@import './componentes/Cartelera.css';
+@import './componentes/Proximamente.css';
 
 
 *{
   font-family: 'Roboto Mono';
+}
+
+.titulo{
+  margin-left: 5%;
 }
 
 
