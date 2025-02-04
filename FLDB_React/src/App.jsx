@@ -6,6 +6,7 @@ import { Pelicula } from './componentes/Pelicula.jsx';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Cartelera } from './componentes/Cartelera.jsx';
 import { Proximamente } from './componentes/Proximamente.jsx';
+import { MejorValoradas } from './componentes/MejorValoradas.jsx';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/pelicula" element={<Pelicula />} />
             <Route path='/cartelera' element={<Cartelera/>}/>
             <Route path='/proximamente' element={<Proximamente/>} />
+            <Route path='/mejor-valoradas' element={<MejorValoradas/>} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>

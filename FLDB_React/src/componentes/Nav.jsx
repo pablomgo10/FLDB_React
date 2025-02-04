@@ -27,7 +27,10 @@ export function Nav() {
 
                 </li>
                 <li>
-                    Mejores valoradas
+                <Link to={'/mejor-valoradas'}>
+                Mejores valoradas
+                    </Link>
+                    
                 </li>
             </ul>
         </div>

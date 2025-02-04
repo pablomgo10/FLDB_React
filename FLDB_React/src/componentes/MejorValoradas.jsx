@@ -7,7 +7,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
-export function Popular() {
+export function MejorValoradas() {
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -19,18 +19,20 @@ export function Popular() {
     navigate (`?page=${nuevaPagina}`)
   }
 
+
+//Con el siguiente useEffect, cuando se pase 
+//de página, la vista se va al principio
   useEffect(() => {
     setTimeout(()=>{
       window.scrollTo(0, 0);
     }, 300);
   }, [paginaActual]);
 
-  const url = `https://api.themoviedb.org/3/movie/popular?language=es-ES&page=${paginaActual}&region=ES`;
-
+  const url=`https://api.themoviedb.org/3/movie/top_rated?language=es-ES&page=${paginaActual}&region=ES`;
   return (
-    <div className="populares">
+    <div className="home">
       <Nav/>
-      <h1 className="titulo">Películas populares:</h1>
+      <h1>Películas mejor valoradas:</h1>
       <Listado url={url}/>
       <div className="botones-pelicula">
       <button onClick={() => cambiarPagina(paginaActual - 1)} className="atras-peliculas">

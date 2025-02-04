@@ -27,26 +27,14 @@ export function Pelicula() {
 
   const { data } = useFetchPelicula(url, options);
 
+  const number = ((valor) => {
+    return Math.round(valor * 10) / 10;
+  })
+
   return (
 
     <div className="wrapper">
       <Nav />
-      {/** 
-        <div className="general">
-      {data ? (
-        <div key={data.id} className="pelicula">
-        <img
-         className="portada"
-         src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-         alt={data.title}
-       />
-       <h3 className="titulo-pelicula">{data.title}</h3>
-     </div>
-      ) : (
-        <p>No se encontraron películas populares.</p>
-      )}
-      </div>
-      **/}
       {data ? (
         <div key={data.id} className="pelicula-general">
 
@@ -72,11 +60,11 @@ export function Pelicula() {
             <p>
               Valoración media: {
                 data.vote_average < 5.0 ? (
-                  <span className="suspenso">{data.vote_average}</span>
+                  <span className="suspenso">{number(data.vote_average)}</span>
                 ) : data.vote_average < 7.0 ? (
-                  <span className="regular">{data.vote_average}</span>
+                  <span className="regular">{number(data.vote_average)}</span>
                 ) : (
-                  <span className="aprobado">{data.vote_average}</span>
+                  <span className="aprobado">{number(data.vote_average)}</span>
                 )
               }
             </p>

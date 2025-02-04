@@ -77,3 +77,35 @@
     height: 20px;
     transition: height 0.3s ease-in-out;
 }
+
+.valoracion-pelicula{
+    width: 30px;
+    position: absolute;
+    z-index: 9;
+    margin-left: 245px;
+    margin-top: 50px;
+    font-size: large;
+}
+
+.aprobado-portada{
+    font-weight: bolder;
+    
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgb(36, 129, 53);
+}
+
+.regular-portada{
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgb(158, 115, 35);
+    
+}
+
+.suspenso-portada{
+    font-weight: bold;
+    background-color: rgb(145, 31, 31);
+    border-radius: 50%;
+    padding: 10px;
+}
