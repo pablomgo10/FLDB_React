@@ -1,4 +1,4 @@
-import { useFetchPelicula } from "../funciones/useFetch";
+import { useFetchPelicula, useFetchPlataformas, useFetchVideos } from "../funciones/useFetch";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 import { useLocation } from "react-router-dom";
@@ -16,6 +16,9 @@ export function Pelicula() {
 
 
   const url = useMemo(() => `https://api.themoviedb.org/3/movie/${idPelicula}?language=es-ES`, [idPelicula]);
+  const urlPlataformas = useMemo(() => `https://api.themoviedb.org/3/movie/${idPelicula}/watch/providers`, [idPelicula]);
+  const urlVideos = useMemo(() => `https://api.themoviedb.org/3/movie/${idPelicula}/videos?language=es-ES`, [idPelicula]);
+
 
   const options = useMemo(() => ({
     method: 'GET',
@@ -26,7 +29,54 @@ export function Pelicula() {
   }), []);
 
   const { data } = useFetchPelicula(url, options);
+  const {datosVideos} = useFetchVideos(urlVideos,options);
+  const {datos} = useFetchPlataformas(urlPlataformas,options);
 
+
+  const comprobacionDatos = (datos) => {
+    if (!datos || !datos.results || !datos.results.ES || !datos.results.ES.flatrate) {
+      return "No hay plataformas";
+    }
+    return (
+      <div className="plataformas">
+        {datos.results.ES.flatrate.map((proveedor, index) => {
+            return (
+              <div key={index} className="plataformas-imagenes">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${proveedor.logo_path}`}
+                  alt={proveedor.provider_name}
+                />
+              </div>
+            );
+        })}
+      </div>
+    );
+  };
+
+  const comprobacionVideos = ((datosVideos)=>{
+  if(!datosVideos || !datosVideos.results){
+    return 'No hay videos disponibles';
+  }
+  else
+  {
+    return(
+      <div className="videos">
+        {datosVideos.results.map((videos)=>{
+          return ( 
+            <div key={videos.key}>
+
+              <p>{videos.name}</p>
+              <p>https://api.themoviedb.org/3/movie/297762/videos?api_key=IDQiIgB86ro</p>
+
+            </div>
+          )
+        })}
+      </div>
+    );
+  }
+  })
+  
+ 
   const number = ((valor) => {
     return Math.round(valor * 10) / 10;
   })
@@ -69,12 +119,22 @@ export function Pelicula() {
               }
             </p>
 
+            <div>
+              Plataformas streaming: {comprobacionDatos(datos)}
+            </div>
+
           </div>
           <div className="desc">
             <h2>Descripción</h2>
             <p>
               {data.overview}
             </p>
+          </div>
+          <div className="trailers">
+            <h2>Videos</h2>
+            <div>
+            {comprobacionVideos(datosVideos)}
+            </div>
           </div>
         </div>
       ) : (
