@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import { es } from 'date-fns/locale';
 
 
+
 export function Pelicula() {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -29,8 +30,8 @@ export function Pelicula() {
   }), []);
 
   const { data } = useFetchPelicula(url, options);
-  const {datosVideos} = useFetchVideos(urlVideos,options);
-  const {datos} = useFetchPlataformas(urlPlataformas,options);
+  const { datosVideos } = useFetchVideos(urlVideos, options);
+  const { datos } = useFetchPlataformas(urlPlataformas, options);
 
 
   const comprobacionDatos = (datos) => {
@@ -40,43 +41,44 @@ export function Pelicula() {
     return (
       <div className="plataformas">
         {datos.results.ES.flatrate.map((proveedor, index) => {
-            return (
-              <div key={index} className="plataformas-imagenes">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${proveedor.logo_path}`}
-                  alt={proveedor.provider_name}
-                />
-              </div>
-            );
+          return (
+            <div key={index} className="plataformas-imagenes">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${proveedor.logo_path}`}
+                alt={proveedor.provider_name}
+              />
+            </div>
+          );
         })}
       </div>
     );
   };
 
-  const comprobacionVideos = ((datosVideos)=>{
-  if(!datosVideos || !datosVideos.results){
-    return 'No hay videos disponibles';
-  }
-  else
-  {
-    return(
-      <div className="videos">
-        {datosVideos.results.map((videos)=>{
-          return ( 
-            <div key={videos.key}>
+  const comprobacionVideos = ((datosVideos) => {
+    if (!datosVideos || !datosVideos.results) {
+      return 'No hay videos disponibles';
+    }
+    else {
+      return (
+        <div className="videos">
+          {datosVideos.results.map((videos) => {
+            return (
+              <div key={videos.id} className="video-individual">
+                <iframe
+                  src={`https://www.youtube.com/embed/${videos.key}`}
+                  title={videos.name}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen />
 
-              <p>{videos.name}</p>
-              <p>https://api.themoviedb.org/3/movie/297762/videos?api_key=IDQiIgB86ro</p>
-
-            </div>
-          )
-        })}
-      </div>
-    );
-  }
+              </div>
+            )
+          })}
+        </div>
+      );
+    }
   })
-  
- 
+
+
   const number = ((valor) => {
     return Math.round(valor * 10) / 10;
   })
@@ -132,9 +134,8 @@ export function Pelicula() {
           </div>
           <div className="trailers">
             <h2>Videos</h2>
-            <div>
-            {comprobacionVideos(datosVideos)}
-            </div>
+              {comprobacionVideos(datosVideos)}
+            
           </div>
         </div>
       ) : (

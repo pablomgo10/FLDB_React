@@ -29,7 +29,6 @@
 
 .desc{
     grid-column: 1/4;
-    grid-row: 2/2;
 }
 
 .aprobado{
@@ -55,4 +54,23 @@
 .plataformas img{
     margin-top: 20px;
     max-width: 50px;
+}
+.trailers{
+    grid-column: 1/4;
+}
+
+.videos{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.video-individual{
+    
+}
+
+iframe{
+    height: 200px;
+    width: 400px;
 }
