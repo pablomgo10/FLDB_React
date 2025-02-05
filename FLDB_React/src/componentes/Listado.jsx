@@ -54,7 +54,8 @@ export function Listado({ url }) {
           </div>
         ))
       ) : (
-        <p>No se encontraron más películas.</p>
+        null
+        //<p>No se encontraron más películas.</p>
       )}
     </div>
   );

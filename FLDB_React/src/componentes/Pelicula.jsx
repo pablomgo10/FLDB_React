@@ -139,7 +139,8 @@ export function Pelicula() {
           </div>
         </div>
       ) : (
-        <p>No hay peliculas</p>
+        null
+        //<p>No hay peliculas</p>
       )
       }
       <Footer />
