@@ -48,7 +48,7 @@ export function Home() {
                                 alt={data.results[4].title}
                             />
                         </div>
-                    ) : (<p>nada</p>)}
+                    ) : (null)}
                 </div>
                 <div className="seccion2">
                     <h1 className="trending-h1">Trending:

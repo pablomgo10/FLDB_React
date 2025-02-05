@@ -89,9 +89,14 @@ export function Pelicula() {
       <Nav />
       {data ? (
         <div key={data.id} className="pelicula-general">
-
-          <img className="portada-pelicula" src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+          {data.poster_path ? (
+            <img className="portada-pelicula" src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
             alt={data.tittle} />
+            ) : (
+              <img className="portada-pelicula" src={`../../images/not-found.jpg`}
+            alt={data.tittle} />
+              )}
+          
           <div className="info-esencial">
             <h2>
               Información general
@@ -100,13 +105,18 @@ export function Pelicula() {
               Titulo: {data.title}
             </p>
             <p>
-              Genero: {data.genres.map((genero, index) => (
-                genero.name + (index < data.genres.length - 1 ? ',' : '.')
-              ))}
+              Genero: {
+                data.genres ? (data.genres.map((genero, index) => (
+                  genero.name + (index < data.genres.length - 1 ? ',' : '.')
+                ))) : (`-`)
+              }
             </p>
             <p>
               Fecha de lanzamiento: {
-                format(new Date(data.release_date), "dd/MM/yyyy", { locale: es })
+                data.release_date ? (
+                  format(new Date(data.release_date), "dd/MM/yyyy", { locale: es })
+                ) : (`-`)
+                
               }
             </p>
             <p>
@@ -129,7 +139,7 @@ export function Pelicula() {
           <div className="desc">
             <h2>Descripción</h2>
             <p>
-              {data.overview}
+              {data.overview ? (data.overview) : (`No hay descripción`)}
             </p>
           </div>
           <div className="trailers">

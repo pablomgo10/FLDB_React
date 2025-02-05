@@ -42,12 +42,22 @@ export function Listado({ url }) {
                 )
               }
               </div>
-            <img
+              {movie.poster_path ? (
+                <img
             onClick={() => cambiarPelicula(movie.id)}
               className="portada"
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
             />
+            ):(
+              <img
+            onClick={() => cambiarPelicula(movie.id)}
+              className="portada"
+              src={`../../images/not-found.jpg`}
+              alt={movie.title}
+            />
+            )}
+            
             <h3 className="titulo-pelicula"
             onClick={() => cambiarPelicula(movie.id)}
             >{movie.title}</h3>
