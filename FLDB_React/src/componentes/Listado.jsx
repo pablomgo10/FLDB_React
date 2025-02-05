@@ -54,7 +54,7 @@ export function Listado({ url }) {
           </div>
         ))
       ) : (
-        <p>No se encontraron películas populares.</p>
+        <p>No se encontraron más películas.</p>
       )}
     </div>
   );
