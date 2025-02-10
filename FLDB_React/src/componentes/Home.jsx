@@ -23,7 +23,7 @@ export function Home() {
             <div className="home-pagina">
                 <div className="seccion1">
                     <div className="texto-bienvenida">
-                        <p>Welcome to FLDB</p>
+                        <p>Welcome to FLDB  </p>
                     </div>
                     {data ? (
                         <div>
@@ -49,9 +49,9 @@ export function Home() {
                             />
                         </div>
                     ) : (null)}
-                </div>
+                </div>🔝
                 <div className="seccion2">
-                    <h1 className="trending-h1">Trending:
+                    <h1 className="trending-h1">Trending :
                     </h1>
                     <Trending />
                 </div>
